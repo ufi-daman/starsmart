@@ -146,6 +146,11 @@
 .cons-card{display:flex;align-items:center;gap:16px;background:var(--bg);border:1px solid var(--rule);border-radius:12px;padding:16px;margin-bottom:22px;}.cons-photo{width:68px;height:68px;flex-shrink:0;border-radius:50%;overflow:hidden;background:#deeeff;border:2px solid var(--rule);display:flex;align-items:center;justify-content:center;font-size:1.6rem;}.cons-photo img{width:100%;height:100%;object-fit:cover;display:block;}.cons-name{display:block;font-size:.9rem;font-weight:800;color:var(--ink);letter-spacing:-.01em;margin-bottom:2px;}.cons-role{display:block;font-size:.72rem;color:var(--navy-l);font-weight:600;margin-bottom:5px;}.cons-bio{font-size:.75rem;color:var(--ink-3);line-height:1.5;margin:0;}
 .rev-agg{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px;}.rev-platform{background:var(--white);border:1px solid var(--rule);border-radius:12px;padding:18px 22px;display:flex;align-items:center;gap:16px;flex:1;min-width:180px;}.rev-plat-logo{width:32px;height:32px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.5rem;line-height:1;}.rev-plat-score{font-size:2rem;font-weight:800;color:var(--ink);letter-spacing:-.04em;line-height:1;}.rev-plat-stars{color:#f5a623;font-size:.9rem;letter-spacing:.04em;display:block;margin-bottom:2px;}.rev-plat-count{font-size:.7rem;color:var(--ink-3);}.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}@media(max-width:760px){.rev-grid{grid-template-columns:1fr 1fr;}}@media(max-width:480px){.rev-grid{grid-template-columns:1fr;}}.rev-card{background:var(--white);border:1px solid var(--rule);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:8px;transition:box-shadow .18s;}.rev-card:hover{box-shadow:0 4px 16px rgba(0,36,92,.08);}.rev-stars{color:#f5a623;font-size:.88rem;letter-spacing:.06em;}.rev-text{font-size:.82rem;color:var(--ink-2);line-height:1.65;font-style:italic;flex:1;margin:0;}.rev-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:10px;border-top:1px solid var(--rule);margin-top:4px;}.rev-author{display:flex;align-items:center;gap:8px;}.rev-avatar{width:30px;height:30px;border-radius:50%;background:#deeeff;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;color:var(--navy-l);flex-shrink:0;}.rev-author-name{font-size:.78rem;font-weight:700;color:var(--ink);line-height:1.2;}.rev-source{font-size:.64rem;color:var(--ink-3);}.rev-badge{display:inline-flex;align-items:center;gap:3px;font-size:.6rem;font-weight:700;letter-spacing:.04em;padding:3px 8px;border-radius:4px;}.rev-badge.heureka{background:#ff6d00;color:#fff;}.rev-badge.google{background:#4285f4;color:#fff;}
 .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}@media(max-width:760px){.art-grid{grid-template-columns:1fr 1fr;}}@media(max-width:480px){.art-grid{grid-template-columns:1fr;}}.art-card{background:var(--white);border:1px solid var(--rule);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .18s,border-color .18s;text-decoration:none;color:inherit;}.art-card:hover{box-shadow:0 6px 24px rgba(0,36,92,.09);border-color:rgba(0,59,122,.2);}.art-img{aspect-ratio:16/9;background:var(--bg);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}.art-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s;}.art-card:hover .art-img img{transform:scale(1.05);}.art-img-ph{font-size:2.8rem;opacity:.18;}.art-cat-badge{position:absolute;top:10px;left:10px;background:var(--navy);color:#fff;font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:4px;}.art-body{padding:18px;flex:1;display:flex;flex-direction:column;}.art-date{font-size:.68rem;color:var(--ink-3);margin-bottom:8px;}.art-card h3{font-size:.9rem;font-weight:700;color:var(--ink);line-height:1.3;letter-spacing:-.01em;margin-bottom:8px;transition:color .15s;}.art-card:hover h3{color:var(--navy-l);}.art-excerpt{font-size:.77rem;color:var(--ink-3);line-height:1.6;flex:1;margin-bottom:14px;}.art-more{font-size:.75rem;font-weight:700;color:var(--navy-l);display:inline-flex;align-items:center;gap:4px;margin-top:auto;}.art-more::after{content:'→';}
+.hs-content{transition:opacity .6s ease;}.hs-content:not(.active){position:absolute;top:0;left:0;right:0;opacity:0;pointer-events:none;}.hs-content.active{opacity:1;pointer-events:auto;}
+.h-vis{position:relative;}.hs-visual{transition:opacity .6s ease;}.hs-visual:not(.active){position:absolute;top:0;left:0;right:0;bottom:0;opacity:0;pointer-events:none;}.hs-visual.active{opacity:1;pointer-events:auto;}
+.hs-img-frame{width:100%;max-width:420px;aspect-ratio:3.8/3;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-bottom:none;border-radius:14px 14px 0 0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:28px 28px 0;position:relative;overflow:hidden;}.hs-img-frame::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 50% 110%,rgba(10,82,168,.3),transparent);pointer-events:none;}.hs-img-frame img{max-width:68%;max-height:72%;object-fit:contain;flex:1;position:relative;z-index:1;filter:drop-shadow(0 8px 24px rgba(0,0,0,.35));margin-bottom:10px;}.hs-img-cap{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px 14px;width:100%;position:relative;z-index:1;margin-bottom:0;}.hs-img-cap strong{display:block;font-size:.82rem;font-weight:700;color:#fff;margin-bottom:2px;}.hs-img-cap span{font-size:.7rem;color:rgba(255,255,255,.48);}
+.hs-ui{position:absolute;bottom:28px;left:5%;display:flex;align-items:center;gap:10px;z-index:10;}.hs-prev,.hs-next{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:1.25rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s;line-height:1;padding:0;font-family:inherit;}.hs-prev:hover,.hs-next:hover{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.45);}.hs-dots{display:flex;gap:6px;align-items:center;}.hs-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.3);border:none;cursor:pointer;padding:0;transition:background .2s,transform .2s;}.hs-dot.active{background:#fff;transform:scale(1.35);}.hs-dot:hover{background:rgba(255,255,255,.65);}
+@media(max-width:860px){.hs-img-frame{max-width:none;border-radius:0;border-left:none;border-right:none;}.hs-ui{bottom:16px;}}
 </style>
 </head>
 <body>
@@ -209,15 +214,54 @@
   <div class="h-dots"></div>
   <div class="h-grad"></div>
   <div class="h-text">
-    <div class="h-eye"><span class="dot">★</span><span>Výhradní distributor ČR &amp; SR — H&amp;B Group</span></div>
-    <h1>Chytrý přístup<br>do každých<br><span class="hl">dveří.</span></h1>
-    <p class="h-lead">Modulární elektronický přístupový systém STAR Smart — pro domácnosti, hotely, sportoviště i státní správu. Odemykejte mobilem, čipem, kódem nebo otiskem prstu.</p>
-    <div class="h-btns">
-      <a href="#reseni" class="btn-red">Najít své řešení</a>
-      <a href="#studie" class="btn-gw">Případové studie</a>
-      <a href="https://apps.apple.com/cz/app/star-master-app/id1672854108?l=cs" target="_blank" style="display:inline-block;line-height:0"><img src="app-store-badge.png" alt="Download on the App Store" height="44" style="display:block"></a>
-      <a href="https://play.google.com/store/apps/details?id=com.hbgroup.starsmartcust" target="_blank" style="display:inline-block;line-height:0"><img src="google-play-badge.png" alt="Get it on Google Play" height="44" style="display:block"></a>
+
+    <!-- Snímek 1 — Obecné -->
+    <div class="hs-content active">
+      <div class="h-eye"><span class="dot">★</span><span>Výhradní distributor ČR &amp; SR — H&amp;B Group</span></div>
+      <h1>Chytrý přístup<br>do každých<br><span class="hl">dveří.</span></h1>
+      <p class="h-lead">Modulární elektronický přístupový systém STAR Smart — pro domácnosti, hotely, sportoviště i státní správu. Odemykejte mobilem, čipem, kódem nebo otiskem prstu.</p>
+      <div class="h-btns">
+        <a href="#reseni" class="btn-red">Najít své řešení</a>
+        <a href="#studie" class="btn-gw">Případové studie</a>
+        <a href="https://apps.apple.com/cz/app/star-master-app/id1672854108?l=cs" target="_blank" style="display:inline-block;line-height:0"><img src="app-store-badge.png" alt="Download on the App Store" height="44" style="display:block"></a>
+        <a href="https://play.google.com/store/apps/details?id=com.hbgroup.starsmartcust" target="_blank" style="display:inline-block;line-height:0"><img src="google-play-badge.png" alt="Get it on Google Play" height="44" style="display:block"></a>
+      </div>
     </div>
+
+    <!-- Snímek 2 — Hotely -->
+    <div class="hs-content">
+      <div class="h-eye"><span class="dot">🏨</span><span>Segment: Hotely &amp; penziony</span></div>
+      <h1>Bezkontaktní<br>vstup pro vaše<br><span class="hl">hosty.</span></h1>
+      <p class="h-lead">Hotelové kování STAR Smart — online check-in, dočasné kódy a přímá integrace s PMS systémy. Bez recepce, bez fyzického klíče, bez kabeláže.</p>
+      <div class="h-btns">
+        <a href="#reseni" class="btn-red">Hotelové řešení</a>
+        <a href="#pms" class="btn-gw">Integrace PMS →</a>
+      </div>
+    </div>
+
+    <!-- Snímek 3 — Airbnb / krátkodobý pronájem -->
+    <div class="hs-content">
+      <div class="h-eye"><span class="dot">🏠</span><span>Segment: Krátkodobý pronájem</span></div>
+      <h1>Klíče hostům<br>na dálku.<br><span class="hl">Bez předání.</span></h1>
+      <p class="h-lead">Automatické PIN kódy nebo mobilní přístup pro každý pobyt. Spravujte více bytů z jedné aplikace — odkudkoliv a kdykoliv.</p>
+      <div class="h-btns">
+        <a href="#reseni" class="btn-red">Řešení pro pronájem</a>
+        <a href="#aplikace" class="btn-gw">STAR master app →</a>
+      </div>
+    </div>
+
+    <!-- Snímek 4 — Sportoviště & fitness -->
+    <div class="hs-content">
+      <div class="h-eye"><span class="dot">🏋️</span><span>Segment: Sportoviště &amp; fitness</span></div>
+      <h1>Šatny a skříňky<br>bez klíčů.<br><span class="hl">Fokus na výkon.</span></h1>
+      <p class="h-lead">Nábytkový zámek STAR Smart nahradí staré visací zámky — mobilní app, čip nebo PIN. Žádné ztracené klíče, žádné výměny zámků.</p>
+      <div class="h-btns">
+        <a href="#reseni" class="btn-red">Sportovní řešení</a>
+        <a href="#produkty" class="btn-gw">Produktová řada →</a>
+      </div>
+    </div>
+
+    <!-- Statistiky — společné pro všechny snímky -->
     <div class="h-stats">
       <div class="hs"><span class="n">+500</span><span class="l">instalací v ČR a SR</span></div>
       <div class="hs"><span class="n">5×</span><span class="l">způsobů odemknutí</span></div>
@@ -226,17 +270,69 @@
       <div class="hs"><span class="n">∞</span><span class="l">typů objektů</span></div>
     </div>
   </div>
+
   <div class="h-vis">
-    <div class="h-frame">
-      <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370315-chytry-zamek-star.png" alt="Chytrý zámek" loading="lazy"></div><div class="nm">Chytrý zámek</div></div>
-      <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370322-elektronicke-kovani-star-smart.png" alt="El. kování" loading="lazy"></div><div class="nm">El. kování</div></div>
-      <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370338-elektronicka-jednostranna-vlozka-star-smart-s-knoflikem-verze-f.png" alt="El. vložka" loading="lazy"></div><div class="nm">El. vložka</div></div>
-      <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370313-stenova-ctecka-star-smart-k2f-k3f-.png" alt="Stěn. čtečka" loading="lazy"></div><div class="nm">Stěn. čtečka</div></div>
-      <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370499-key-box-star-smart-wp.jpg" alt="Keybox" loading="lazy"></div><div class="nm">Keybox</div></div>
-      <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370300-modul-gateway-star-smart.png" alt="Gateway" loading="lazy"></div><div class="nm">Gateway</div></div>
-      <a href="#produkty" class="h-frame-btn">Celá produktová rodina STAR Smart →</a>
+
+    <!-- Vizuál 1: produktová mřížka -->
+    <div class="hs-visual active">
+      <div class="h-frame">
+        <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370315-chytry-zamek-star.png" alt="Chytrý zámek" loading="lazy"></div><div class="nm">Chytrý zámek</div></div>
+        <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370322-elektronicke-kovani-star-smart.png" alt="El. kování" loading="lazy"></div><div class="nm">El. kování</div></div>
+        <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370338-elektronicka-jednostranna-vlozka-star-smart-s-knoflikem-verze-f.png" alt="El. vložka" loading="lazy"></div><div class="nm">El. vložka</div></div>
+        <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370313-stenova-ctecka-star-smart-k2f-k3f-.png" alt="Stěn. čtečka" loading="lazy"></div><div class="nm">Stěn. čtečka</div></div>
+        <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370499-key-box-star-smart-wp.jpg" alt="Keybox" loading="lazy"></div><div class="nm">Keybox</div></div>
+        <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370300-modul-gateway-star-smart.png" alt="Gateway" loading="lazy"></div><div class="nm">Gateway</div></div>
+        <a href="#produkty" class="h-frame-btn">Celá produktová rodina STAR Smart →</a>
+      </div>
     </div>
+
+    <!-- Vizuál 2: hotelové kování -->
+    <div class="hs-visual">
+      <div class="hs-img-frame">
+        <img src="https://www.klicovecentrum.cz/images/products/370495-hotelova-klika-star-smart-uzke-provedeni.png" alt="Hotelové kování STAR Smart" loading="lazy">
+        <div class="hs-img-cap">
+          <strong>Hotelové kování STAR Smart</strong>
+          <span>Úzké provedení · Karta, čip, mobilní aplikace</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vizuál 3: keybox -->
+    <div class="hs-visual">
+      <div class="hs-img-frame">
+        <img src="https://www.klicovecentrum.cz/images/products/370499-key-box-star-smart-wp.jpg" alt="Keybox STAR Smart WP" loading="lazy">
+        <div class="hs-img-cap">
+          <strong>Keybox STAR Smart WP</strong>
+          <span>Voděodolný · Vzdálené sdílení přístupu</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vizuál 4: nábytkový zámek -->
+    <div class="hs-visual">
+      <div class="hs-img-frame">
+        <img src="https://www.klicovecentrum.cz/images/products/370307-nabytkovy-zamek-star-smart.png" alt="Nábytkový zámek STAR Smart" loading="lazy">
+        <div class="hs-img-cap">
+          <strong>Nábytkový zámek STAR Smart</strong>
+          <span>Pro skříňky a šatny · Bez kabeláže</span>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <!-- Ovládání slideru -->
+  <div class="hs-ui">
+    <button class="hs-prev" aria-label="Předchozí snímek">‹</button>
+    <div class="hs-dots" role="tablist" aria-label="Snímky hero sekce">
+      <button class="hs-dot active" role="tab" aria-selected="true"  aria-label="Obecné"></button>
+      <button class="hs-dot"        role="tab" aria-selected="false" aria-label="Hotely"></button>
+      <button class="hs-dot"        role="tab" aria-selected="false" aria-label="Pronájem"></button>
+      <button class="hs-dot"        role="tab" aria-selected="false" aria-label="Sportoviště"></button>
+    </div>
+    <button class="hs-next" aria-label="Další snímek">›</button>
+  </div>
+
 </section>
 </div>
 
@@ -1192,6 +1288,54 @@ const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
 }, { threshold: 0.08 });
 document.querySelectorAll('.rr, .sg').forEach(el => io.observe(el));
+
+// Hero slider
+(function(){
+  var contents = document.querySelectorAll('.hs-content');
+  var visuals  = document.querySelectorAll('.hs-visual');
+  var dots     = document.querySelectorAll('.hs-dot');
+  var idx = 0, timer;
+  var DELAY = 6000;
+
+  function goTo(n) {
+    var prev = idx;
+    idx = ((n % contents.length) + contents.length) % contents.length;
+    if (prev === idx) return;
+    // Activate new slide first (maintains layout height)
+    contents[idx].classList.add('active');
+    visuals[idx].classList.add('active');
+    dots[idx].classList.add('active');
+    dots[idx].setAttribute('aria-selected', 'true');
+    // Deactivate old slide
+    contents[prev].classList.remove('active');
+    visuals[prev].classList.remove('active');
+    dots[prev].classList.remove('active');
+    dots[prev].setAttribute('aria-selected', 'false');
+  }
+
+  function start() { timer = setInterval(function(){ goTo(idx + 1); }, DELAY); }
+  function stop()  { clearInterval(timer); }
+
+  var prevBtn = document.querySelector('.hs-prev');
+  var nextBtn = document.querySelector('.hs-next');
+  if (prevBtn) prevBtn.addEventListener('click', function(){ stop(); goTo(idx - 1); start(); });
+  if (nextBtn) nextBtn.addEventListener('click', function(){ stop(); goTo(idx + 1); start(); });
+  dots.forEach(function(d, i){ d.addEventListener('click', function(){ stop(); goTo(i); start(); }); });
+
+  var hero = document.getElementById('hero');
+  if (hero) {
+    hero.addEventListener('mouseenter', stop);
+    hero.addEventListener('mouseleave', start);
+    var tx = 0;
+    hero.addEventListener('touchstart', function(e){ tx = e.touches[0].clientX; }, {passive:true});
+    hero.addEventListener('touchend',   function(e){
+      var dx = e.changedTouches[0].clientX - tx;
+      if (Math.abs(dx) > 44) { stop(); goTo(idx + (dx < 0 ? 1 : -1)); start(); }
+    }, {passive:true});
+  }
+
+  start();
+})();
 </script>
 </body>
 </html>
