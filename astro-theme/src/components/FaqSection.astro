@@ -1,23 +1,26 @@
 ---
 import type { FaqItem } from '../lib/types';
-interface Props { items: FaqItem[]; }
+
+interface Props {
+  items: FaqItem[];
+}
+
 const { items } = Astro.props;
 ---
-<div class="bg-b divider" id="faq">
+
+<div class="bg-w divider" id="faq">
   <div class="wrap">
-    <span class="lbl">Časté dotazy</span>
-    <h2>Odpovědi na nejčastější otázky</h2>
-    <p class="sub">Nenašli jste odpověď? Napište nám nebo zavolejte — rádi poradíme.</p>
-    <div class="faq-list">
-      {items.map(item => (
+    <span class="lbl">Časté otázky</span>
+    <h2>Než nás kontaktujete</h2>
+    <p class="sub">Nejčastější otázky zákazníků před rozhodnutím — o montáži, bezpečnosti, kompatibilitě i servisu.</p>
+    <div class="faq-list rr">
+      {items.map((item) => (
         <div class="faq-item">
           <button class="faq-q" onclick="toggleFaq(this)">
             {item.question}
             <i class="faq-icon">+</i>
           </button>
-          <div class="faq-a">
-            <p>{item.answer}</p>
-          </div>
+          <div class="faq-a"><p>{item.answer}</p></div>
         </div>
       ))}
     </div>
@@ -25,11 +28,10 @@ const { items } = Astro.props;
 </div>
 
 <script>
-function toggleFaq(btn: HTMLElement) {
-  const item = btn.closest('.faq-item') as HTMLElement;
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+function toggleFaq(btn: HTMLButtonElement) {
+  var item = btn.parentElement as HTMLElement;
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function (el) { el.classList.remove('open'); });
   if (!isOpen) item.classList.add('open');
 }
-(window as any).toggleFaq = toggleFaq;
 </script>
