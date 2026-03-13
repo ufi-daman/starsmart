@@ -1,0 +1,35 @@
+---
+import type { FaqItem } from '../lib/types';
+interface Props { items: FaqItem[]; }
+const { items } = Astro.props;
+---
+<div class="bg-b divider" id="faq">
+  <div class="wrap">
+    <span class="lbl">Časté dotazy</span>
+    <h2>Odpovědi na nejčastější otázky</h2>
+    <p class="sub">Nenašli jste odpověď? Napište nám nebo zavolejte — rádi poradíme.</p>
+    <div class="faq-list">
+      {items.map(item => (
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            {item.question}
+            <i class="faq-icon">+</i>
+          </button>
+          <div class="faq-a">
+            <p>{item.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleFaq(btn: HTMLElement) {
+  const item = btn.closest('.faq-item') as HTMLElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+(window as any).toggleFaq = toggleFaq;
+</script>

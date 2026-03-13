@@ -1,0 +1,26 @@
+---
+import type { HowStep } from '../lib/types';
+
+interface Props {
+  steps: HowStep[];
+}
+
+const { steps } = Astro.props;
+---
+
+<div class="bg-w divider" id="jak">
+  <div class="wrap">
+    <span class="lbl">Jak to funguje</span>
+    <h2>Od výběru po první odemčení</h2>
+    <p class="sub">Celý proces je navržen tak, aby byl srozumitelný a zvládnutelný — bez nutnosti odborníka na místě.</p>
+    <div class="how-row sg rr">
+      {steps.map((step) => (
+        <div class="how-c">
+          <span class="how-n">{step.number}</span>
+          <h3>{step.title}</h3>
+          <p>{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

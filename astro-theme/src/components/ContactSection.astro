@@ -1,0 +1,70 @@
+---
+import type { ContactInfo } from '../lib/types';
+interface Props { contact: ContactInfo; }
+const { contact } = Astro.props;
+---
+<div class="bg-w divider" id="kontakt">
+  <div class="wrap">
+    <span class="lbl">Kontakt</span>
+    <h2>Pojďme to probrat</h2>
+    <p class="sub">Bezplatná konzultace bez závazků. Odpovíme do 24 hodin.</p>
+    <div class="ct-grid">
+      <form class="form" name="starsmart-kontakt" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="starsmart-kontakt">
+        <div class="f2">
+          <div class="fg">
+            <label for="ct-name">Jméno a příjmení</label>
+            <input id="ct-name" name="name" type="text" placeholder="Jan Novák" required>
+          </div>
+          <div class="fg">
+            <label for="ct-email">E-mail</label>
+            <input id="ct-email" name="email" type="email" placeholder="jan@firma.cz" required>
+          </div>
+        </div>
+        <div class="f2">
+          <div class="fg">
+            <label for="ct-phone">Telefon</label>
+            <input id="ct-phone" name="phone" type="tel" placeholder="+420 xxx xxx xxx">
+          </div>
+          <div class="fg">
+            <label for="ct-seg">Typ objektu</label>
+            <select id="ct-seg" name="segment">
+              <option value="">Vyberte…</option>
+              <option>Domácnost / byt</option>
+              <option>Rodinný dům / chata</option>
+              <option>Hotel / penzion</option>
+              <option>Krátkodobý pronájem</option>
+              <option>Sportoviště / fitness</option>
+              <option>Kancelář / firma</option>
+              <option>Státní správa / škola</option>
+              <option>Jiné</option>
+            </select>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="ct-msg">Zpráva</label>
+          <textarea id="ct-msg" name="message" placeholder="Popište váš objekt a co potřebujete…"></textarea>
+        </div>
+        <button type="submit" class="f-btn">Odeslat poptávku →</button>
+      </form>
+
+      <div class="ct-info">
+        <h3>Jsme tu pro vás</h3>
+        <p>Poradíme s výběrem, nacenujeme projekt a zajistíme montáž. Osobně na pobočce, telefonicky nebo e-mailem.</p>
+        <div class="ct-rows">
+          <div class="ct-row"><div class="ct-ico">📞</div><div><strong>Telefon</strong><small>{contact.phone}</small></div></div>
+          <div class="ct-row"><div class="ct-ico">✉️</div><div><strong>E-mail</strong><small>{contact.email}</small></div></div>
+          <div class="ct-row"><div class="ct-ico">📍</div><div><strong>Adresa</strong><small>{contact.address}</small></div></div>
+          <div class="ct-row"><div class="ct-ico">🕐</div><div><strong>Otevírací doba</strong><small>{contact.hours}</small></div></div>
+          <div class="ct-row">
+            <div class="ct-ico">🔑</div>
+            <div>
+              <strong>Klientský portál</strong>
+              <small><a href={contact.portalUrl} target="_blank" style="color:var(--navy-l)">Registrace a správa →</a></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
