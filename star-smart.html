@@ -149,7 +149,7 @@
 .hs-content{transition:opacity .6s ease;}.hs-content:not(.active){position:absolute;top:0;left:0;right:0;opacity:0;pointer-events:none;}.hs-content.active{opacity:1;pointer-events:auto;}
 .h-vis{position:relative;}.hs-visual{transition:opacity .6s ease;}.hs-visual:not(.active){position:absolute;top:0;left:0;right:0;bottom:0;opacity:0;pointer-events:none;}.hs-visual.active{opacity:1;pointer-events:auto;}
 .hs-img-frame{width:100%;max-width:420px;aspect-ratio:3.8/3;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-bottom:none;border-radius:14px 14px 0 0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:28px 28px 0;position:relative;overflow:hidden;}.hs-img-frame::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 50% 110%,rgba(10,82,168,.3),transparent);pointer-events:none;}.hs-img-frame img{max-width:68%;max-height:72%;object-fit:contain;flex:1;position:relative;z-index:1;filter:drop-shadow(0 8px 24px rgba(0,0,0,.35));margin-bottom:10px;}.hs-img-cap{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:10px 14px;width:100%;position:relative;z-index:1;margin-bottom:0;}.hs-img-cap strong{display:block;font-size:.82rem;font-weight:700;color:#fff;margin-bottom:2px;}.hs-img-cap span{font-size:.7rem;color:rgba(255,255,255,.48);}
-.hs-ui{position:absolute;bottom:28px;left:5%;display:flex;align-items:center;gap:10px;z-index:10;}.hs-prev,.hs-next{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:1.25rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s;line-height:1;padding:0;font-family:inherit;}.hs-prev:hover,.hs-next:hover{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.45);}.hs-dots{display:flex;gap:6px;align-items:center;}.hs-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.3);border:none;cursor:pointer;padding:0;transition:background .2s,transform .2s;}.hs-dot.active{background:#fff;transform:scale(1.35);}.hs-dot:hover{background:rgba(255,255,255,.65);}
+.hs-ui{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;z-index:10;white-space:nowrap;}.hs-prev,.hs-next{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:1.25rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s,border-color .15s;line-height:1;padding:0;font-family:inherit;}.hs-prev:hover,.hs-next:hover{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.45);}.hs-dots{display:flex;gap:6px;align-items:center;}.hs-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.3);border:none;cursor:pointer;padding:0;transition:background .2s,transform .2s;}.hs-dot.active{background:#fff;transform:scale(1.35);}.hs-dot:hover{background:rgba(255,255,255,.65);}
 @media(max-width:860px){.hs-img-frame{max-width:none;border-radius:0;border-left:none;border-right:none;}.hs-ui{bottom:16px;}}
 </style>
 </head>
@@ -272,53 +272,15 @@
   </div>
 
   <div class="h-vis">
-
-    <!-- Vizuál 1: produktová mřížka -->
-    <div class="hs-visual active">
-      <div class="h-frame">
-        <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370315-chytry-zamek-star.png" alt="Chytrý zámek" loading="lazy"></div><div class="nm">Chytrý zámek</div></div>
-        <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370322-elektronicke-kovani-star-smart.png" alt="El. kování" loading="lazy"></div><div class="nm">El. kování</div></div>
-        <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370338-elektronicka-jednostranna-vlozka-star-smart-s-knoflikem-verze-f.png" alt="El. vložka" loading="lazy"></div><div class="nm">El. vložka</div></div>
-        <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370313-stenova-ctecka-star-smart-k2f-k3f-.png" alt="Stěn. čtečka" loading="lazy"></div><div class="nm">Stěn. čtečka</div></div>
-        <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370499-key-box-star-smart-wp.jpg" alt="Keybox" loading="lazy"></div><div class="nm">Keybox</div></div>
-        <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370300-modul-gateway-star-smart.png" alt="Gateway" loading="lazy"></div><div class="nm">Gateway</div></div>
-        <a href="#produkty" class="h-frame-btn">Celá produktová rodina STAR Smart →</a>
-      </div>
+    <div class="h-frame">
+      <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370315-chytry-zamek-star.png" alt="Chytrý zámek" loading="lazy"></div><div class="nm">Chytrý zámek</div></div>
+      <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370322-elektronicke-kovani-star-smart.png" alt="El. kování" loading="lazy"></div><div class="nm">El. kování</div></div>
+      <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370338-elektronicka-jednostranna-vlozka-star-smart-s-knoflikem-verze-f.png" alt="El. vložka" loading="lazy"></div><div class="nm">El. vložka</div></div>
+      <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370313-stenova-ctecka-star-smart-k2f-k3f-.png" alt="Stěn. čtečka" loading="lazy"></div><div class="nm">Stěn. čtečka</div></div>
+      <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370499-key-box-star-smart-wp.jpg" alt="Keybox" loading="lazy"></div><div class="nm">Keybox</div></div>
+      <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370300-modul-gateway-star-smart.png" alt="Gateway" loading="lazy"></div><div class="nm">Gateway</div></div>
+      <a href="#produkty" class="h-frame-btn">Celá produktová rodina STAR Smart →</a>
     </div>
-
-    <!-- Vizuál 2: hotelové kování -->
-    <div class="hs-visual">
-      <div class="hs-img-frame">
-        <img src="https://www.klicovecentrum.cz/images/products/370495-hotelova-klika-star-smart-uzke-provedeni.png" alt="Hotelové kování STAR Smart" loading="lazy">
-        <div class="hs-img-cap">
-          <strong>Hotelové kování STAR Smart</strong>
-          <span>Úzké provedení · Karta, čip, mobilní aplikace</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Vizuál 3: keybox -->
-    <div class="hs-visual">
-      <div class="hs-img-frame">
-        <img src="https://www.klicovecentrum.cz/images/products/370499-key-box-star-smart-wp.jpg" alt="Keybox STAR Smart WP" loading="lazy">
-        <div class="hs-img-cap">
-          <strong>Keybox STAR Smart WP</strong>
-          <span>Voděodolný · Vzdálené sdílení přístupu</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Vizuál 4: nábytkový zámek -->
-    <div class="hs-visual">
-      <div class="hs-img-frame">
-        <img src="https://www.klicovecentrum.cz/images/products/370307-nabytkovy-zamek-star-smart.png" alt="Nábytkový zámek STAR Smart" loading="lazy">
-        <div class="hs-img-cap">
-          <strong>Nábytkový zámek STAR Smart</strong>
-          <span>Pro skříňky a šatny · Bez kabeláže</span>
-        </div>
-      </div>
-    </div>
-
   </div>
 
   <!-- Ovládání slideru -->
