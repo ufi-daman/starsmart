@@ -1252,24 +1252,29 @@ document.querySelectorAll('.rr, .sg').forEach(el => io.observe(el));
 
 // Hero slider
 (function(){
-  var contents = document.querySelectorAll('.hs-content');
-  var visuals  = document.querySelectorAll('.hs-visual');
-  var dots     = document.querySelectorAll('.hs-dot');
+  var contents = Array.prototype.slice.call(document.querySelectorAll('.hs-content'));
+  var dots     = Array.prototype.slice.call(document.querySelectorAll('.hs-dot'));
+  if (!contents.length) return;
   var idx = 0, timer;
   var DELAY = 6000;
+
+  // Inicializace — skrýt všechny neaktivní slidy přes inline style (nejvyšší priorita)
+  contents.forEach(function(c, i) {
+    c.style.display = i === 0 ? 'block' : 'none';
+  });
 
   function goTo(n) {
     var prev = idx;
     idx = ((n % contents.length) + contents.length) % contents.length;
     if (prev === idx) return;
+
+    contents[idx].style.display = 'block';
     contents[idx].classList.add('active');
-    visuals[idx].classList.add('active');
-    dots[idx].classList.add('active');
-    dots[idx].setAttribute('aria-selected', 'true');
+    if (dots[idx]) { dots[idx].classList.add('active'); dots[idx].setAttribute('aria-selected','true'); }
+
+    contents[prev].style.display = 'none';
     contents[prev].classList.remove('active');
-    visuals[prev].classList.remove('active');
-    dots[prev].classList.remove('active');
-    dots[prev].setAttribute('aria-selected', 'false');
+    if (dots[prev]) { dots[prev].classList.remove('active'); dots[prev].setAttribute('aria-selected','false'); }
   }
 
   function start() { timer = setInterval(function(){ goTo(idx + 1); }, DELAY); }
