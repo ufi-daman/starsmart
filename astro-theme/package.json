@@ -5,12 +5,16 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "cms:proxy": "npx decap-server",
+    "dev:cms": "concurrently \"npm run dev\" \"npm run cms:proxy\""
   },
   "dependencies": {
     "astro": "^4.15.0"
   },
   "devDependencies": {
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "concurrently": "^9.0.0",
+    "decap-server": "^3.0.0"
   }
 }

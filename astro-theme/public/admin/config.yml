@@ -1,0 +1,120 @@
+# ---------------------------------------------------------------------------
+# Decap CMS — konfigurace pro STAR Smart
+# ---------------------------------------------------------------------------
+# Pro lokální vývoj: spusťte `npm run cms:proxy` a otevřete /admin
+# Pro produkci: nastavte backend na git-gateway nebo jinou službu
+# ---------------------------------------------------------------------------
+
+# LOKÁLNÍ VÝVOJ — odkomentujte pro editaci bez GitHubu
+local_backend: true
+
+# PRODUKČNÍ BACKEND — odkomentujte a nastavte pro nasazení
+# backend:
+#   name: git-gateway
+#   branch: main
+
+backend:
+  name: proxy
+  proxy_url: http://localhost:8081/api/v1
+
+media_folder: public/images/cms
+public_folder: /images/cms
+
+locale: cs
+
+collections:
+  # -------------------------------------------------------------------------
+  # Hlavní stránka
+  # -------------------------------------------------------------------------
+  - name: homepage
+    label: Hlavní stránka
+    files:
+      - name: home
+        label: Obsah hlavní stránky
+        file: astro-theme/content/home.json
+        fields:
+
+          # SEO
+          - { label: "Meta titulek", name: metaTitle, widget: string }
+          - { label: "Meta popis", name: metaDescription, widget: text }
+
+          # ── Hero slideshow ──
+          - label: "Hero slideshowy"
+            name: heroSlides
+            widget: list
+            summary: "{{fields.eyeBadge}}"
+            fields:
+              - { label: "Odznak nad nadpisem", name: eyeBadge, widget: string }
+              - { label: "Nadpis (HTML: <br>, <span class=\"hl\">)", name: headline, widget: string, hint: "Lze použít <br> pro zalomení a <span class=\"hl\">text</span> pro zvýraznění." }
+              - { label: "Perex", name: lead, widget: text }
+              - { label: "Primární tlačítko — text", name: btnPrimaryLabel, widget: string }
+              - { label: "Primární tlačítko — odkaz", name: btnPrimaryUrl, widget: string }
+              - { label: "Sekundární tlačítko — text", name: btnSecondaryLabel, widget: string, required: false }
+              - { label: "Sekundární tlačítko — odkaz", name: btnSecondaryUrl, widget: string, required: false }
+              - { label: "Zobrazit odznaky App Store / Google Play", name: showAppBadges, widget: boolean, default: false, required: false }
+
+          # ── Jak to funguje ──
+          - label: "Kroky „Jak to funguje""
+            name: howSteps
+            widget: list
+            summary: "{{fields.number}} — {{fields.title}}"
+            fields:
+              - { label: "Číslo", name: number, widget: string, hint: "Např. 01" }
+              - { label: "Název kroku", name: title, widget: string }
+              - { label: "Popis", name: description, widget: text }
+
+          # ── Produkty ──
+          - label: "Produkty"
+            name: products
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Název produktu", name: name, widget: string }
+              - { label: "Kategorie", name: category, widget: string }
+              - { label: "Cena", name: price, widget: string, hint: "Např. od 3 482 Kč" }
+              - { label: "Popis", name: description, widget: text }
+              - { label: "URL obrázku", name: imageUrl, widget: string }
+              - { label: "Alt text obrázku", name: imageAlt, widget: string }
+              - { label: "URL v e-shopu", name: shopUrl, widget: string, required: false }
+
+          # ── PMS partneři ──
+          - label: "PMS partneři"
+            name: pmsPartners
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Název systému", name: name, widget: string }
+              - { label: "Vendor", name: vendor, widget: string }
+              - { label: "URL loga", name: logoUrl, widget: string, required: false }
+              - { label: "Vlastní položka (\"Váš systém\")", name: isCustom, widget: boolean, default: false, required: false }
+
+          # ── Reze integrace ──
+          - { label: "YouTube ID videa Reze", name: rezeYoutubeId, widget: string }
+          - { label: "Nadpis Reze sekce (HTML povoleno)", name: rezeFeatHeadline, widget: string }
+          - { label: "Text Reze sekce", name: rezeFeatText, widget: text }
+          - label: "Odrážky Reze"
+            name: rezeBullets
+            widget: list
+            summary: "{{fields.text}}"
+            fields:
+              - { label: "Text odrážky", name: text, widget: string }
+
+          # ── FAQ ──
+          - label: "FAQ otázky"
+            name: faqItems
+            widget: list
+            summary: "{{fields.question}}"
+            fields:
+              - { label: "Otázka", name: question, widget: string }
+              - { label: "Odpověď", name: answer, widget: text }
+
+          # ── Kontakt ──
+          - label: "Kontaktní informace"
+            name: contact
+            widget: object
+            fields:
+              - { label: "Telefon", name: phone, widget: string }
+              - { label: "E-mail", name: email, widget: string }
+              - { label: "Adresa", name: address, widget: string }
+              - { label: "Otevírací doba", name: hours, widget: string }
+              - { label: "URL klientského portálu", name: portalUrl, widget: string }
