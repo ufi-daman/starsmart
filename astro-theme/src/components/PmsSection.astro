@@ -32,7 +32,7 @@ const { partners, rezeYoutubeId, rezeFeatHeadline, rezeFeatText, rezeBullets } =
       </div>
       <div class="pms-feat-txt">
         <div class="pms-feat-badge">
-          <img src="https://logo.clearbit.com/reze.cz" alt="Reze" onerror="this.style.display='none'" />
+          <img src="https://logo.clearbit.com/reze.cz" alt="Reze" referrerpolicy="no-referrer" onerror="this.style.display='none'" />
           Zvýrazněná integrace
         </div>
         <h3 set:html={rezeFeatHeadline}></h3>
@@ -53,9 +53,9 @@ const { partners, rezeYoutubeId, rezeFeatHeadline, rezeFeatText, rezeBullets } =
             {partner.isCustom ? (
               <span class="pms-logo-api">🔌</span>
             ) : partner.logoUrl ? (
-              <img src={partner.logoUrl} alt={partner.name} loading="lazy" />
+              <img src={partner.logoUrl} alt={partner.name} loading="lazy" referrerpolicy="no-referrer" />
             ) : (
-              <img src={`https://logo.clearbit.com/${partner.vendor.toLowerCase().replace(/\s+/g, '')}.com`} alt={partner.name} loading="lazy" />
+              <img src={`https://logo.clearbit.com/${partner.vendor.toLowerCase().replace(/\s+/g, '')}.com`} alt={partner.name} loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'" />
             )}
           </div>
           <div class="pms-name">{partner.name}</div>

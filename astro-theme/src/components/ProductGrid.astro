@@ -17,7 +17,7 @@ const { products } = Astro.props;
       {products.map((product) => (
         <div class="p-card">
           <div class="p-img">
-            <img src={product.imageUrl} alt={product.imageAlt} loading="lazy" />
+            <img src={product.imageUrl} alt={product.imageAlt} loading="lazy" referrerpolicy="no-referrer" />
           </div>
           <div class="p-body">
             <span class="p-cat">{product.category}</span>
