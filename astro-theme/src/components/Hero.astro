@@ -1,0 +1,134 @@
+---
+import type { HeroSlide } from '../lib/types';
+
+interface Props {
+  slides: HeroSlide[];
+}
+
+const { slides } = Astro.props;
+---
+
+<div style="background:var(--navy)">
+<section id="hero">
+  <div class="h-dots"></div>
+  <div class="h-grad"></div>
+  <div class="h-text">
+
+    {slides.map((slide, i) => (
+      <div class={`hs-content${i === 0 ? ' active' : ''}`}>
+        <div class="h-eye">
+          <span class="dot">{slide.eyeBadge.split(' ')[0]}</span>
+          <span set:html={slide.eyeBadge.replace(/^(\S+)\s+/, '')}></span>
+        </div>
+        <h1 set:html={slide.headline}></h1>
+        <p class="h-lead">{slide.lead}</p>
+        <div class="h-btns">
+          <a href={slide.btnPrimaryUrl} class="btn-red">{slide.btnPrimaryLabel}</a>
+          {slide.btnSecondaryLabel && slide.btnSecondaryUrl && (
+            <a href={slide.btnSecondaryUrl} class="btn-gw">{slide.btnSecondaryLabel}</a>
+          )}
+          {slide.showAppBadges && (
+            <>
+              <a href="https://apps.apple.com/cz/app/star-master-app/id1672854108?l=cs" target="_blank" style="display:inline-block;line-height:0">
+                <img src="/app-store-badge.png" alt="Download on the App Store" height="44" style="display:block" />
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.hbgroup.starsmartcust" target="_blank" style="display:inline-block;line-height:0">
+                <img src="/google-play-badge.png" alt="Get it on Google Play" height="44" style="display:block" />
+              </a>
+            </>
+          )}
+        </div>
+      </div>
+    ))}
+
+    <!-- Statistiky — společné pro všechny snímky -->
+    <div class="h-stats">
+      <div class="hs"><span class="n">+500</span><span class="l">instalací v ČR a SR</span></div>
+      <div class="hs"><span class="n">5×</span><span class="l">způsobů odemknutí</span></div>
+      <div class="hs"><span class="n">12+</span><span class="l">měs. výdrž baterií</span></div>
+      <div class="hs"><span class="n">100%</span><span class="l">bez kabeláže</span></div>
+      <div class="hs"><span class="n">∞</span><span class="l">typů objektů</span></div>
+    </div>
+  </div>
+
+  <div class="h-vis">
+    <div class="h-frame">
+      <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370315-chytry-zamek-star.png" alt="Chytrý zámek" loading="lazy" referrerpolicy="no-referrer" /></div><div class="nm">Chytrý zámek</div></div>
+      <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370322-elektronicke-kovani-star-smart.png" alt="El. kování" loading="lazy" referrerpolicy="no-referrer" /></div><div class="nm">El. kování</div></div>
+      <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370338-elektronicka-jednostranna-vlozka-star-smart-s-knoflikem-verze-f.png" alt="El. vložka" loading="lazy" referrerpolicy="no-referrer" /></div><div class="nm">El. vložka</div></div>
+      <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370313-stenova-ctecka-star-smart-k2f-k3f-.png" alt="Stěn. čtečka" loading="lazy" referrerpolicy="no-referrer" /></div><div class="nm">Stěn. čtečka</div></div>
+      <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370499-key-box-star-smart-wp.jpg" alt="Keybox" loading="lazy" referrerpolicy="no-referrer" /></div><div class="nm">Keybox</div></div>
+      <div class="h-chip"><div class="ico"><img src="https://www.klicovecentrum.cz/images/products/370300-modul-gateway-star-smart.png" alt="Gateway" loading="lazy" referrerpolicy="no-referrer" /></div><div class="nm">Gateway</div></div>
+      <a href="#produkty" class="h-frame-btn">Celá produktová rodina STAR Smart →</a>
+    </div>
+  </div>
+
+  <!-- Ovládání slideru -->
+  <div class="hs-ui">
+    <button class="hs-prev" aria-label="Předchozí snímek">‹</button>
+    <div class="hs-dots" role="tablist" aria-label="Snímky hero sekce">
+      {slides.map((slide, i) => (
+        <button
+          class={`hs-dot${i === 0 ? ' active' : ''}`}
+          role="tab"
+          aria-selected={i === 0 ? 'true' : 'false'}
+          aria-label={slide.eyeBadge}
+        ></button>
+      ))}
+    </div>
+    <button class="hs-next" aria-label="Další snímek">›</button>
+  </div>
+
+</section>
+</div>
+
+<script>
+(function () {
+  var contents = Array.prototype.slice.call(document.querySelectorAll('.hs-content'));
+  var dots = Array.prototype.slice.call(document.querySelectorAll('.hs-dot'));
+  if (!contents.length) return;
+  var idx = 0, timer;
+  var DELAY = 6000;
+
+  contents.forEach(function (c, i) {
+    c.style.display = i === 0 ? 'block' : 'none';
+  });
+
+  function goTo(n) {
+    var prev = idx;
+    idx = ((n % contents.length) + contents.length) % contents.length;
+    if (prev === idx) return;
+
+    contents[idx].style.display = 'block';
+    contents[idx].classList.add('active');
+    if (dots[idx]) { dots[idx].classList.add('active'); dots[idx].setAttribute('aria-selected', 'true'); }
+
+    contents[prev].style.display = 'none';
+    contents[prev].classList.remove('active');
+    if (dots[prev]) { dots[prev].classList.remove('active'); dots[prev].setAttribute('aria-selected', 'false'); }
+  }
+
+  function start() { timer = setInterval(function () { goTo(idx + 1); }, DELAY); }
+  function stop() { clearInterval(timer); }
+
+  var prevBtn = document.querySelector('.hs-prev');
+  var nextBtn = document.querySelector('.hs-next');
+  if (prevBtn) prevBtn.addEventListener('click', function () { stop(); goTo(idx - 1); start(); });
+  if (nextBtn) nextBtn.addEventListener('click', function () { stop(); goTo(idx + 1); start(); });
+  dots.forEach(function (d, i) { d.addEventListener('click', function () { stop(); goTo(i); start(); }); });
+
+  var hero = document.getElementById('hero');
+  if (hero) {
+    hero.addEventListener('mouseenter', stop);
+    hero.addEventListener('mouseleave', start);
+    var tx = 0;
+    hero.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
+    hero.addEventListener('touchend', function (e) {
+      var dx = e.changedTouches[0].clientX - tx;
+      if (Math.abs(dx) > 44) { stop(); goTo(idx + (dx < 0 ? 1 : -1)); start(); }
+    }, { passive: true });
+  }
+
+  start();
+})();
+</script>

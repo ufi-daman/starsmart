@@ -1,0 +1,86 @@
+---
+import type { ContactInfo } from '../lib/types';
+
+interface Props {
+  contact: ContactInfo;
+}
+
+const { contact } = Astro.props;
+---
+
+<div class="bg-w divider" id="kontakt">
+  <div class="wrap">
+    <span class="lbl">Kontaktujte nás</span>
+    <h2>Konzultace zdarma</h2>
+    <p class="sub">Napište nám o svém projektu a připravíme konkrétní návrh systému STAR Smart na míru.</p>
+    <div class="ct-grid rr">
+      <div class="form">
+        <div class="f2">
+          <div class="fg"><label>Jméno a příjmení</label><input type="text" placeholder="Jan Novák" /></div>
+          <div class="fg"><label>Telefon</label><input type="tel" placeholder="+420 777 000 000" /></div>
+        </div>
+        <div class="fg"><label>E-mail</label><input type="email" placeholder="jan@firma.cz" /></div>
+        <div class="fg">
+          <label>Typ objektu / segment</label>
+          <select>
+            <option value="">— Vyberte segment —</option>
+            <option>Domácnost / byt</option>
+            <option>Rodinný dům / chata</option>
+            <option>Krátkodobé ubytování (Airbnb)</option>
+            <option>Hotel / penzion</option>
+            <option>Sportoviště / fitness</option>
+            <option>Sociální a zdravotnické služby</option>
+            <option>Státní správa / veřejné instituce</option>
+            <option>Projektant / architekt</option>
+            <option>Developer / bytový projekt</option>
+          </select>
+        </div>
+        <div class="fg"><label>Popis projektu / dotaz</label><textarea placeholder="Popište stručně svůj objekt, počet dveří, specifické požadavky…"></textarea></div>
+        <button type="button" class="f-btn">Odeslat poptávku</button>
+      </div>
+      <div class="ct-info">
+        <div class="cons-card">
+          <div class="cons-photo">
+            <span>👤</span>
+          </div>
+          <div>
+            <span class="cons-name">Specialista STAR Smart</span>
+            <span class="cons-role">Konzultant H&amp;B Group</span>
+            <p class="cons-bio">Rádi vám poradíme s výběrem správného řešení pro váš objekt.</p>
+          </div>
+        </div>
+        <p style="font-size:.82rem;color:var(--ink-3);margin-bottom:22px;line-height:1.65;">12 poboček po celé ČR a SR. Připravíme návrh konkrétního řešení pro váš objekt — bez závazků a bez poplatku.</p>
+        <div class="ct-rows">
+          <div class="ct-row">
+            <div class="ct-ico">📞</div>
+            <div>
+              <strong><a href={`tel:${contact.phone.replace(/\s/g, '')}`}>{contact.phone}</a></strong>
+              <small>{contact.hours}</small>
+            </div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-ico">✉️</div>
+            <div>
+              <strong><a href={`mailto:${contact.email}`}>{contact.email}</a></strong>
+              <small>Odpovídáme do 24 hodin</small>
+            </div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-ico">📍</div>
+            <div>
+              <strong>{contact.address}</strong>
+              <small>Plzeň, Praha, Brno, Ostrava, Č. Budějovice…</small>
+            </div>
+          </div>
+          <div class="ct-row">
+            <div class="ct-ico">📋</div>
+            <div>
+              <strong><a href={contact.portalUrl} target="_blank" style="color:var(--navy-l);text-decoration:none;">Projektový katalog →</a></strong>
+              <small>Technické podklady ke stažení</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+---
+import type { Product } from '../lib/types';
+
+interface Props {
+  products: Product[];
+}
+
+const { products } = Astro.props;
+---
+
+<div class="bg-w divider" id="produkty">
+  <div class="wrap">
+    <span class="lbl">Produktová řada</span>
+    <h2>Celá rodina STAR Smart</h2>
+    <p class="sub">Modulární systém — kombinujte zařízení dle potřeb objektu. Vše vzájemně kompatibilní, vše spravovatelné z jedné aplikace.</p>
+    <div class="p-grid sg rr">
+      {products.map((product) => (
+        <div class="p-card">
+          <div class="p-img">
+            <img src={product.imageUrl} alt={product.imageAlt} loading="lazy" referrerpolicy="no-referrer" />
+          </div>
+          <div class="p-body">
+            <span class="p-cat">{product.category}</span>
+            <h3>{product.name}</h3>
+            <p>{product.description}</p>
+            <div class="p-price">{product.price} <em>vč. DPH</em></div>
+            {product.shopUrl && (
+              <a href={product.shopUrl} target="_blank" class="p-btn">Koupit →</a>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

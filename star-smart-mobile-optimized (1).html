@@ -155,11 +155,54 @@ h1 { font-size:clamp(2.4rem,5vw,3.8rem); font-weight:800; line-height:1.08; lett
 .h-chip .ico img { width:100%; height:100%; object-fit:contain; padding:10px; background:rgba(255,255,255,.07); transition:transform .3s; }
 .h-chip:hover .ico img { transform:scale(1.08); }
 .h-chip .nm { font-size:.6rem; color:rgba(255,255,255,.45); font-weight:500; letter-spacing:.03em; line-height:1.3; display:block; padding:6px 6px 8px; }
+@media(max-width:860px){.h-chip .nm{font-size:.72rem}}
 .h-frame-btn { grid-column:1/-1; display:block; text-align:center; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); border-radius:8px; color:rgba(255,255,255,.85); font-size:.75rem; font-weight:600; padding:10px 12px; text-decoration:none; transition:background .2s,border-color .2s,color .2s; margin-top:4px; position:relative; z-index:2; }
 .h-frame-btn:hover { background:rgba(255,255,255,.18); border-color:rgba(255,255,255,.45); color:#fff; }
 .toggle-arrow { transition:transform .25s; font-size:.75rem; }
 .toggle-arrow.open { transform:rotate(180deg); }
-@media(max-width:860px){#hero{grid-template-columns:1fr}.h-vis{display:none}}
+@media(max-width:860px){
+  #hero { grid-template-columns:1fr; }
+  /* Show product showcase as horizontal scroll carousel below hero text */
+  .h-vis {
+    display:block;
+    padding:0;
+    margin:0 -5% 0;
+    width:calc(100% + 10%);
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .h-vis::-webkit-scrollbar { display:none; }
+  .h-frame {
+    display:flex;
+    flex-direction:row;
+    width:max-content;
+    max-width:none;
+    aspect-ratio:unset;
+    border-radius:0;
+    border-left:none;
+    border-right:none;
+    padding:16px 5%;
+    gap:10px;
+    align-items:stretch;
+    grid-template-columns:unset;
+  }
+  .h-frame::before { display:none; }
+  .h-chip {
+    flex:0 0 88px;
+    width:88px;
+  }
+  .h-chip .ico { aspect-ratio:1/1; }
+  /* Minimum readable font size in carousel: 11px+ on 16px base */
+  .h-chip .nm { font-size:.72rem; }
+  .h-frame-btn {
+    flex:0 0 auto;
+    align-self:center;
+    white-space:nowrap;
+    padding:10px 16px;
+    font-size:.72rem;
+  }
+}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 
 /* ─ USP BAR ─ */
@@ -511,7 +554,7 @@ body.mob-open { overflow:hidden; }
 .faq-list { display:flex; flex-direction:column; gap:0; margin-top:8px; }
 .faq-item { border-bottom:1px solid var(--rule); }
 .faq-item:first-child { border-top:1px solid var(--rule); }
-.faq-q { width:100%; background:none; border:none; text-align:left; font-family:var(--ff); font-size:.92rem; font-weight:600; color:var(--ink); padding:18px 0; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px; transition:color .15s; }
+.faq-q { width:100%; background:none; border:none; text-align:left; font-family:var(--ff); font-size:.92rem; font-weight:600; color:var(--ink); padding:18px 0; min-height:56px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px; transition:color .15s; }
 .faq-q:hover { color:var(--navy); }
 .faq-icon { width:22px; height:22px; flex-shrink:0; background:var(--bg); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.75rem; color:var(--navy-l); transition:transform .25s,background .15s; font-style:normal; }
 .faq-item.open .faq-icon { transform:rotate(45deg); background:#deeeff; }
@@ -653,7 +696,7 @@ footer { background:var(--navy);border-top:1px solid rgba(255,255,255,.07);paddi
 /* ── Standardní telefon (max 480px) ── */
 @media(max-width:480px){
   /* Hero */
-  #hero { padding:56px 4% 0; }
+  #hero { padding:68px 4% 0; } /* 60px nav + 8px buffer */
   h1 { font-size:clamp(1.85rem,8vw,2.6rem); }
   .h-lead { font-size:.875rem; }
   .h-stats { gap:10px 16px; }
@@ -664,8 +707,8 @@ footer { background:var(--navy);border-top:1px solid rgba(255,255,255,.07);paddi
   /* Benefity → 1 sloupec */
   .ben-grid { grid-template-columns:1fr; }
 
-  /* Segmenty */
-  .seg-intro-grid { grid-template-columns:repeat(3,1fr); }
+  /* Segmenty — 2 cols at 480px (3 is cramped with 9 tiles) */
+  .seg-intro-grid { grid-template-columns:repeat(2,1fr); }
 
   /* How-to → 1 sloupec */
   .how-row { grid-template-columns:1fr; }
@@ -677,7 +720,7 @@ footer { background:var(--navy);border-top:1px solid rgba(255,255,255,.07);paddi
 
 /* ── Malý telefon (max 390px) ── */
 @media(max-width:390px){
-  #hero { padding:52px 4% 0; }
+  #hero { padding:64px 4% 0; } /* min 60px for fixed nav + buffer */
   h1 { font-size:1.75rem; }
   .h-btns .btn-red, .h-btns .btn-gw { font-size:.82rem; padding:12px 16px; }
   .h-stats { gap:8px 14px; }
@@ -699,6 +742,28 @@ footer { background:var(--navy);border-top:1px solid rgba(255,255,255,.07);paddi
   .seg-tile { min-height:72px; }
   .fc ul li a { padding:4px 0; display:inline-block; }
   .cs-link { padding:4px 0; }
+  /* Prevent iOS auto-zoom on form inputs (font-size must be >= 16px) */
+  .fg input, .fg select, .fg textarea { font-size:16px; }
+}
+
+/* ── Safe area insets (iOS notch / home bar) ── */
+nav {
+  padding-top: max(0px, env(safe-area-inset-top));
+}
+.mob-menu {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.mob-menu-footer {
+  padding-bottom: max(28px, env(safe-area-inset-bottom));
+}
+.back-top {
+  bottom: max(24px, calc(env(safe-area-inset-bottom) + 12px));
+  right: max(24px, env(safe-area-inset-right));
+}
+
+/* ── Mobile: aspect-ratio for product images in single-column layout ── */
+@media(max-width:480px){
+  .p-img { height:auto; aspect-ratio:4/3; }
 }
 </style>
 </head>

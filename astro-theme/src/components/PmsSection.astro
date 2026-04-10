@@ -1,0 +1,70 @@
+---
+import type { PmsPartner, RezeFeatBullet } from '../lib/types';
+
+interface Props {
+  partners: PmsPartner[];
+  rezeYoutubeId: string;
+  rezeFeatHeadline: string;
+  rezeFeatText: string;
+  rezeBullets: RezeFeatBullet[];
+}
+
+const { partners, rezeYoutubeId, rezeFeatHeadline, rezeFeatText, rezeBullets } = Astro.props;
+---
+
+<div class="bg-w divider" id="pms">
+  <div class="wrap">
+    <span class="lbl">Integrace</span>
+    <h2>Kompatibilní s vaším systémem</h2>
+    <p class="sub">STAR Smart se propojuje s předními rezervačními a hotelovými systémy, self check-in kiosky i platformami chytré budovy — přístupová práva se přidělují automaticky.</p>
+
+    <!-- REZEO featured integration -->
+    <div class="pms-feat rr">
+      <div class="pms-feat-vid">
+        <iframe
+          src={`https://www.youtube.com/embed/${rezeYoutubeId}`}
+          title="STAR Smart × REZEO — automatické odbavení hostů na dálku"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+      <div class="pms-feat-txt">
+        <div class="pms-feat-badge">
+          <img src="/images/partners/logo-rezeo.svg" alt="REZEO" />
+          Zvýrazněná integrace
+        </div>
+        <h3 set:html={rezeFeatHeadline}></h3>
+        <p>{rezeFeatText}</p>
+        <ul class="pms-feat-list">
+          {rezeBullets.map((bullet) => (
+            <li><span class="ck">✓</span>{bullet.text}</li>
+          ))}
+        </ul>
+        <a href="#kontakt" class="pms-feat-cta">Chci tuto integraci →</a>
+      </div>
+    </div>
+
+    <div class="pms-grid rr">
+      {partners.map((partner) => (
+        <div class={`pms-card${partner.isCustom ? ' pms-custom' : ''}`}>
+          <div class="pms-logo">
+            {partner.isCustom ? (
+              <span class="pms-logo-api">🔌</span>
+            ) : partner.logoUrl ? (
+              <img src={partner.logoUrl} alt={partner.name} loading="lazy" referrerpolicy="no-referrer" />
+            ) : (
+              <img src={`https://logo.clearbit.com/${partner.vendor.toLowerCase().replace(/\s+/g, '')}.com`} alt={partner.name} loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'" />
+            )}
+          </div>
+          <div class="pms-name">{partner.name}</div>
+          <div class="pms-vendor">{partner.vendor}</div>
+        </div>
+      ))}
+    </div>
+    <p style="text-align:center;font-size:.82rem;color:var(--ink-3);margin-top:16px">
+      Nevidíte váš systém? <a href="#kontakt" style="color:var(--navy-l);font-weight:600">Zeptejte se nás →</a>
+    </p>
+  </div>
+</div>

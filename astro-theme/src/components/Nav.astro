@@ -1,0 +1,59 @@
+---
+// Nav.astro — Static navigation, no props needed
+---
+
+<nav>
+  <a href="#" class="logo">
+    <span class="logo-badge">STAR</span>
+    <span class="logo-text">Smart<sup>®</sup><span class="logo-sub">Chytré přístupové systémy</span></span>
+  </a>
+  <div class="nav-l">
+    <a href="#produkty">Produkty</a>
+    <a href="#reseni">Řešení</a>
+    <a href="#aplikace">Aplikace</a>
+    <a href="#studie">Studie</a>
+    <a href="#recenze">Recenze</a>
+    <a href="#clanky">Články</a>
+    <a href="#profis">Instalatéři</a>
+    <a href="#faq">FAQ</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+  <div class="nav-e">
+    <a href="tel:+420377225903" class="nv-phone">📞 377 225 903</a>
+    <a href="https://www.klicovecentrum.cz/chytre-pristupove-systemy-star-smart/" target="_blank" class="nv-eshop">🛒 <span>E-shop</span></a>
+    <a href="#kontakt" class="nv-cta"><span>Poptávka zdarma</span></a>
+    <button class="mob-toggle" id="mobToggle" onclick="toggleMob()" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<script>
+function toggleMob() {
+  var m = document.getElementById("mobMenu");
+  var t = document.getElementById("mobToggle");
+  var o = document.getElementById("mobOverlay");
+  var isOpen = m.classList.contains("open");
+  if (isOpen) {
+    closeMob();
+  } else {
+    m.classList.add("open");
+    t.classList.add("open");
+    o.classList.add("open");
+    document.body.classList.add("mob-open");
+    t.setAttribute("aria-expanded", "true");
+    var firstLink = m.querySelector("a");
+    if (firstLink) setTimeout(function () { firstLink.focus(); }, 320);
+  }
+}
+
+function closeMob() {
+  document.getElementById("mobMenu").classList.remove("open");
+  document.getElementById("mobToggle").classList.remove("open");
+  document.getElementById("mobOverlay").classList.remove("open");
+  document.body.classList.remove("mob-open");
+  document.getElementById("mobToggle").setAttribute("aria-expanded", "false");
+}
+
+document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeMob(); });
+</script>

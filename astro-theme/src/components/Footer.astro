@@ -1,0 +1,81 @@
+---
+// Footer.astro — Static footer with mobile menu overlay and back-to-top button
+---
+
+<div class="mob-overlay" id="mobOverlay" onclick="closeMob()" aria-hidden="true"></div>
+
+<div class="mob-menu" id="mobMenu" role="dialog" aria-modal="true" aria-label="Navigační menu">
+  <div class="mob-menu-header">
+    <div class="mob-menu-logo">
+      <span class="logo-badge" style="font-size:.6rem;padding:4px 7px;">STAR</span>
+      <span style="font-size:.88rem;font-weight:700;color:#fff;">Smart®</span>
+    </div>
+    <button class="mob-close" onclick="closeMob()" aria-label="Zavřít menu">✕</button>
+  </div>
+  <div class="mob-nav">
+    <a href="tel:+420377225903" class="mob-phone">📞 +420 377 225 903</a>
+    <a href="#produkty" onclick="closeMob()">Produkty</a>
+    <a href="#reseni" onclick="closeMob()">Řešení</a>
+    <a href="#aplikace" onclick="closeMob()">Aplikace</a>
+    <a href="#studie" onclick="closeMob()">Případové studie</a>
+    <a href="#recenze" onclick="closeMob()">Recenze zákazníků</a>
+    <a href="#clanky" onclick="closeMob()">Články</a>
+    <a href="#profis" onclick="closeMob()">Pro instalatéry</a>
+    <a href="#faq" onclick="closeMob()">FAQ</a>
+    <a href="#kontakt" onclick="closeMob()">Kontakt</a>
+    <a href="https://star.hbgroup.cz/register/" target="_blank" class="mob-portal">🔑 Portál STAR →</a>
+  </div>
+  <div class="mob-menu-footer">
+    <a href="#kontakt" onclick="closeMob()" class="mob-cta">Poptávka zdarma</a>
+  </div>
+</div>
+
+<footer>
+  <div class="fi">
+    <div class="ft">
+      <div class="fb">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span class="logo-badge">STAR</span>
+          <span style="font-size:.95rem;font-weight:700;color:#fff;">Smart®</span>
+        </div>
+        <p>Chytré elektronické přístupové systémy — výhradní distributor pro ČR a SR. Klíčové centrum, H&amp;B Group s.r.o.</p>
+      </div>
+      <div class="fc">
+        <h4>Produkty</h4>
+        <ul>
+          <li><a href="https://www.klicovecentrum.cz/chytre-pristupove-systemy-star-smart/" target="_blank">Všechny produkty</a></li>
+          <li><a href="https://www.klicovecentrum.cz/produkt/chytry-zamek-star-smart-2-0/" target="_blank">Chytrý zámek 2.0</a></li>
+          <li><a href="https://www.klicovecentrum.cz/produkt/Hotelova-klika-STAR-Smart-uzke-provedeni/" target="_blank">Hotelové kování</a></li>
+          <li><a href="https://www.klicovecentrum.cz/produkt/modul-gateway-pro-star-smart/" target="_blank">Gateway modul</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Informace</h4>
+        <ul>
+          <li><a href="https://star.hbgroup.cz/register/" target="_blank">Klientský portál</a></li>
+          <li><a href="https://www.klicovecentrum.cz/projektovy-katalog/" target="_blank">Projektový katalog</a></li>
+          <li><a href="https://www.klicovecentrum.cz/elektronicke-pristupove-systemy/" target="_blank">El. přístupové systémy</a></li>
+          <li><a href="https://www.klicovecentrum.cz/nase-reference/" target="_blank">Reference</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>Pobočky</h4>
+        <ul>
+          <li><a href="https://www.klicovecentrum.cz/plzen/" target="_blank">Plzeň</a></li>
+          <li><a href="https://www.klicovecentrum.cz/praha/" target="_blank">Praha</a></li>
+          <li><a href="https://www.klicovecentrum.cz/brno/" target="_blank">Brno</a></li>
+          <li><a href="https://www.klicovecentrum.cz/pobocky/" target="_blank">Všechny pobočky →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 H&amp;B Group s.r.o. – Klíčové centrum. Všechna práva vyhrazena.</span>
+      <div style="display:flex;gap:18px;">
+        <a href="https://www.klicovecentrum.cz/ochrana-osobnich-udaju/" target="_blank">Ochrana osobních údajů</a>
+        <a href="https://www.klicovecentrum.cz/obchodni-podminky/" target="_blank">Obchodní podmínky</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="backTop" aria-label="Zpět nahoru" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
