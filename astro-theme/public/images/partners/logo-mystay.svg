@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 60" width="160" height="60">
+  <rect width="160" height="60" rx="6" fill="#6a1fa3" opacity="0.12"/>
+  <text x="80" y="38" font-family="'Plus Jakarta Sans',Arial,sans-serif"
+        font-size="18" font-weight="700" fill="#6a1fa3"
+        text-anchor="middle" dominant-baseline="middle">mystay</text>
+</svg>

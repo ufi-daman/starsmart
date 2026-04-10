@@ -136,15 +136,15 @@
   "segments": [],
 
   "pmsPartners": [
-    { "name": "Better Hotel", "vendor": "mevris", "logoUrl": "https://logo.clearbit.com/mevris.com" },
-    { "name": "Previo", "vendor": "Previo PMS", "logoUrl": "https://logo.clearbit.com/previo.cz" },
-    { "name": "Czech Kiosk", "vendor": "Czech Kiosk s.r.o.", "logoUrl": "https://logo.clearbit.com/czechkiosk.cz" },
-    { "name": "HORES", "vendor": "HORES PMS", "logoUrl": "https://logo.clearbit.com/hores.cz" },
-    { "name": "ComArr", "vendor": "ComArr informační technologie", "logoUrl": "https://logo.clearbit.com/comarr.cz" },
-    { "name": "mystay", "vendor": "mystay", "logoUrl": "https://logo.clearbit.com/mystay.com" },
-    { "name": "reenio", "vendor": "On-line rezervační systém", "logoUrl": "https://logo.clearbit.com/reenio.cz" },
-    { "name": "Loxone", "vendor": "Loxone Electronics GmbH", "logoUrl": "https://logo.clearbit.com/loxone.com" },
-    { "name": "HotelTime PMS", "vendor": "HotelTime Solutions", "logoUrl": "https://logo.clearbit.com/hoteltime.com" },
+    { "name": "Better Hotel", "vendor": "mevris", "logoUrl": "/images/partners/logo-betterhotel.svg" },
+    { "name": "Previo", "vendor": "Previo PMS", "logoUrl": "/images/partners/logo-previo.svg" },
+    { "name": "Czech Kiosk", "vendor": "Czech Kiosk s.r.o.", "logoUrl": "/images/partners/logo-czechkiosk.svg" },
+    { "name": "HORES", "vendor": "HORES PMS", "logoUrl": "/images/partners/logo-hores.svg" },
+    { "name": "ComArr", "vendor": "ComArr informační technologie", "logoUrl": "/images/partners/logo-comarr.svg" },
+    { "name": "mystay", "vendor": "mystay", "logoUrl": "/images/partners/logo-mystay.svg" },
+    { "name": "reenio", "vendor": "On-line rezervační systém", "logoUrl": "/images/partners/logo-reenio.svg" },
+    { "name": "Loxone", "vendor": "Loxone Electronics GmbH", "logoUrl": "/images/partners/logo-loxone.svg" },
+    { "name": "HotelTime PMS", "vendor": "HotelTime Solutions", "logoUrl": "/images/partners/logo-hoteltime.svg" },
     { "name": "Váš systém", "vendor": "Integrace na míru přes API", "isCustom": true }
   ],
 
