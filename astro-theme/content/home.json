@@ -136,14 +136,15 @@
   "segments": [],
 
   "pmsPartners": [
-    { "name": "Opera Cloud", "vendor": "Oracle Hospitality", "logoUrl": "https://logo.clearbit.com/oracle.com" },
-    { "name": "Mews", "vendor": "Mews Systems", "logoUrl": "https://logo.clearbit.com/mews.com" },
-    { "name": "Protel", "vendor": "Protel hotelsoftware", "logoUrl": "https://logo.clearbit.com/protel.net" },
-    { "name": "Hotelogix", "vendor": "Hotelogix PMS", "logoUrl": "https://logo.clearbit.com/hotelogix.com" },
-    { "name": "Cloudbeds", "vendor": "Cloudbeds", "logoUrl": "https://logo.clearbit.com/cloudbeds.com" },
-    { "name": "Apaleo", "vendor": "Apaleo GmbH", "logoUrl": "https://logo.clearbit.com/apaleo.com" },
-    { "name": "Clock PMS+", "vendor": "Clock Software", "logoUrl": "https://logo.clearbit.com/clock-software.com" },
-    { "name": "Sievert", "vendor": "Sievert Larsen", "logoUrl": "https://logo.clearbit.com/sievert-larsen.de" },
+    { "name": "Better Hotel", "vendor": "mevris", "logoUrl": "https://logo.clearbit.com/mevris.com" },
+    { "name": "Previo", "vendor": "Previo PMS", "logoUrl": "https://logo.clearbit.com/previo.cz" },
+    { "name": "Czech Kiosk", "vendor": "Czech Kiosk s.r.o.", "logoUrl": "https://logo.clearbit.com/czechkiosk.cz" },
+    { "name": "HORES", "vendor": "HORES PMS", "logoUrl": "https://logo.clearbit.com/hores.cz" },
+    { "name": "ComArr", "vendor": "ComArr informační technologie", "logoUrl": "https://logo.clearbit.com/comarr.cz" },
+    { "name": "mystay", "vendor": "mystay", "logoUrl": "https://logo.clearbit.com/mystay.com" },
+    { "name": "reenio", "vendor": "On-line rezervační systém", "logoUrl": "https://logo.clearbit.com/reenio.cz" },
+    { "name": "Loxone", "vendor": "Loxone Electronics GmbH", "logoUrl": "https://logo.clearbit.com/loxone.com" },
+    { "name": "HotelTime PMS", "vendor": "HotelTime Solutions", "logoUrl": "https://logo.clearbit.com/hoteltime.com" },
     { "name": "Váš systém", "vendor": "Integrace na míru přes API", "isCustom": true }
   ],
 
